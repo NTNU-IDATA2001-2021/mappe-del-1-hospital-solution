@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import mappe.del1.hospital.exception.RemoveException;
 
+/**
+ * Represents a Department at the hospital. A department has patients
+ * and employees.
+ * 
+ * @author idatx2001
+ * @version 2021-03-23
+ */
 public class Department {
 
   //list of Employees
@@ -92,7 +99,10 @@ public class Department {
   }
 
   /**
-   *
+   * Checks if the object provided by the parameter is equal to
+   * it self.
+   * This method is overridden from the Object-class, and as such does not need
+   * extra JavaDoc here.
    */
   @Override
   public boolean equals(final Object obj) {
@@ -133,6 +143,7 @@ public class Department {
   /**
    * Creates a String-representation of a Department instance
    * for use in debugging ONLY!
+   * @return a String-representation of a Department
    */
   @Override
   public String toString() {

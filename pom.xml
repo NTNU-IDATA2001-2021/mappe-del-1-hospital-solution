@@ -14,4 +14,40 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!--
+        Og her kommer da alle eksterne biblioteker som prosjektet ditt benytter. Det er tilstrekkelig
+        å legge inn groupID og ArtifactID og versjon i seksjonen under, så vil riktig biblioteks fil
+        bli lastet ned autmatisk til din datamaskin. Dersom biblioteket du har lagt inn på sin side
+        er avhengig av andre biblioteker, vil også disse bli automatisk lastet ned ;-)
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <!--
+                Et Maven prosjekt baserer seg på en rekke plugins. Disse har en default
+                versjon som benyttes dersom ikke annet er spesifisert. For å kunne kjøre JUnit-tester
+                i porsjektet ditt, benyttes en plugin som kalles "Surefire". Default versjonen som kommer
+                med Maven er for gammel til å støtte JUnit5.
+                Du må derfor overstyre denne default versjonen, og fortelle Maven at du ønsker å bruke
+                en nyere versjon av denne pluginen.
+                En plugin håndteres på samme måte som et bibliotek i dependency-seksjonen: den blir
+                automatisk lastet til din datamaskin under bygging, så du trenger ikke laste ned noe selv.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

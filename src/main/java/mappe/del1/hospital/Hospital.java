@@ -6,7 +6,11 @@ import java.util.List;
 import mappe.del1.hospital.exception.RemoveException;
 
 /**
- * Represents a Hospital. A hospital typically consists of one or more departments.
+ * Represents a Hospital. 
+ * A hospital typically consists of one or more departments.
+ * 
+ * @author idatx2001
+ * @version 2021-03-23
  */
 public class Hospital {
 
@@ -51,7 +55,7 @@ public class Hospital {
 
     /**
      * Creates a string representing the Hospital instance
-     * for debugging purposes.
+     * for debugging purposes ONLY!!.
      */
     @Override
     public String toString() {

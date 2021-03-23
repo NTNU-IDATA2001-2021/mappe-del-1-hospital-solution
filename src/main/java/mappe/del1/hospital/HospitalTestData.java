@@ -4,6 +4,13 @@ import mappe.del1.hospital.healthpersonal.Nurse;
 import mappe.del1.hospital.healthpersonal.doctor.GeneralPractitioner;
 import mappe.del1.hospital.healthpersonal.doctor.Surgeon;
 
+/**
+ * A helper-class contining a method to fill a Hospital with some default
+ * departments with some employees and patients.
+ * 
+ * @author idatx2001
+ * @version 2021-03-23
+ */
 public class HospitalTestData {
 
     /**
@@ -16,22 +23,22 @@ public class HospitalTestData {
 
         // Add some departments
         Department emergencyRoom = new Department("Akutten");
-        emergencyRoom.addEmployee(new Employee("Odd Even", "Primtallet", null));
-        emergencyRoom.addEmployee(new Employee("Huppasahn", "DelFinito", null));
-        emergencyRoom.addEmployee(new Nurse("Rigmor", "Mortis", null));
-        emergencyRoom.addEmployee(new GeneralPractitioner("Inco", "Gnito", null));
-        emergencyRoom.addEmployee(new Surgeon("Inco", "Gnito", null));
-        emergencyRoom.addPatient(new Patient("Nina", "Teknologi", null));
-        emergencyRoom.addPatient(new Patient("Ove", "Ralt", null));
+        emergencyRoom.addEmployee(new Employee("Odd Even", "Primtallet", "260327 38456"));
+        emergencyRoom.addEmployee(new Employee("Huppasahn", "DelFinito", "030436 47452"));
+        emergencyRoom.addEmployee(new Nurse("Rigmor", "Mortis", "121267 453678"));
+        emergencyRoom.addEmployee(new GeneralPractitioner("Inco", "Gnito", "310547 48563"));
+        emergencyRoom.addEmployee(new Surgeon("Inco", "Gnito", "280678 32564"));
+        emergencyRoom.addPatient(new Patient("Nina", "Teknologi", "060467 46356"));
+        emergencyRoom.addPatient(new Patient("Ove", "Ralt", "091045 35632"));
         hospital.addDepartment(emergencyRoom);
 
         Department childrensPolyclinic = new Department("Barne poliklinikk");
-        childrensPolyclinic.addEmployee(new Employee("Salti", "Kaffen", null));
-        childrensPolyclinic.addEmployee(new Employee("Nidel V.", "Elvefølger", null));
-        childrensPolyclinic.addEmployee(new Nurse("Anton", "Nym", null));
-        childrensPolyclinic.addEmployee(new GeneralPractitioner("Gene", "Sis", null));
-        childrensPolyclinic.addPatient(new Patient("Nanna", "Na", null));
-        childrensPolyclinic.addPatient(new Patient("Nora", "Toriet", null));
+        childrensPolyclinic.addEmployee(new Employee("Salti", "Kaffen", "121278 45367"));
+        childrensPolyclinic.addEmployee(new Employee("Nidel V.", "ElvefÃ¸lger", "280267 39624"));
+        childrensPolyclinic.addEmployee(new Nurse("Anton", "Nym", "240567 35246"));
+        childrensPolyclinic.addEmployee(new GeneralPractitioner("Gene", "Sis", "210989 56372"));
+        childrensPolyclinic.addPatient(new Patient("Nanna", "Na", "120403 56435"));
+        childrensPolyclinic.addPatient(new Patient("Nora", "Toriet", "281178 36524"));
         hospital.addDepartment(childrensPolyclinic);
     }
 }

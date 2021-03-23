@@ -1,82 +1,123 @@
 package mappe.del1.hospital;
 
+/**
+ * Represents a Person, holding a first name, last name and a social security
+ * number.
+ *
+ * @author idatx2001
+ * @version 2021-03-23
+ */
 public abstract class Person {
 
-    /**
-     * store firstName.
-     */
     private String firstName;
-
-    /**
-     * store lastName.
-     */
     private String lastName;
-
-    /**
-     * store socialSecurityNumber.
-     */
     private String socialSecurityNumber;
 
     /**
-     * @return socialSecurityNumber
+     * Creates an instance of Person.
+     * 
+     * @param firstName the first name of the person
+     * @param lastName the last name of the person
+     * @param socialSecurityNumber the social security number fo the person
      */
-    public String getPersonnummer() {
-        return socialSecurityNumber;
+    public Person(String firstName, String lastName, String socialSecurityNumber) {
+        if ((null == firstName) 
+                || (null == lastName) 
+                || null == socialSecurityNumber) {
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
+        
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.socialSecurityNumber = socialSecurityNumber;
     }
 
     /**
-     * @param ssNumber
+     * Returns the social security number.
+     * 
+     * @return socialSecurityNumber of the person.
      */
-    public void setPersonnummer(final String ssNumber) {
-        this.socialSecurityNumber = ssNumber;
+    public String getSocialSecurityNumber() {
+        return this.socialSecurityNumber;
     }
 
     /**
-     * @param fName
+     * Sets the social security number fo the person.
+     * 
+     * @param socialSecurityNumber
      */
-    public void setFirtName(final String fName) {
-        this.firstName = fName;
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        this.checkForNullAndBlank(socialSecurityNumber);
+        this.socialSecurityNumber = socialSecurityNumber;
     }
 
     /**
-     * @param lName
+     * Sets the first name of the person.
+     * 
+     * @param firstName the first name to be set
      */
-    public void setLastName(final String lName) {
-        this.lastName = lName;
+    public void setFirtName(String firstName) {
+        this.checkForNullAndBlank(firstName);
+        this.firstName = firstName;
     }
 
     /**
-     * @return firstName
+     * Sets the last name of the person.
+     * 
+     * @param lastName
+     */
+    public void setLastName(String lastName) {
+        this.checkForNullAndBlank(lastName);
+        this.lastName = lastName;
+    }
+
+    /**
+     * Returns the first name of the person.
+     * 
+     * @return the first name of the person.
      */
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     /**
-     * @return lastName
+     * Returns the last name of the person.
+     * 
+     * @return the last name of the person
      */
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     /**
-     * @return fullname
+     * Returns the full name of the person on the form
+     * "first name last name".
+     * 
+     * @return the full name of the person
      */
-    public String getFullNavn() {
-        return firstName + " " + lastName;
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
     }
 
-    public Person(final String fornavn, final String etternavn, final String personnummer) {
-        this.firstName = fornavn;
-        this.lastName = etternavn;
-        this.socialSecurityNumber = personnummer;
-    }
-
+    
     /**
-     *
+     * Checks the parameter against {@code null} and blank string.
+     * Throws IllegalArgumentException if the argument is null or blank.
+     * @param someText the text to check
      */
+    private void checkForNullAndBlank(String someText) {
+         if (socialSecurityNumber == null) {
+            throw new IllegalArgumentException("Socisal security number cannot be null");
+        }
+        
+        if (socialSecurityNumber.isBlank()) {
+            throw new IllegalArgumentException("Socisal security number cannot be null");            
+        }       
+    }
+
+
     @Override
     public String toString() {
-        return "[navn=" + firstName + " " + lastName + ", personnummer=" + socialSecurityNumber + "]";
+        return "Person: [name=" + firstName + " " + lastName + ", social security number=" + socialSecurityNumber + "]";
     }
 }

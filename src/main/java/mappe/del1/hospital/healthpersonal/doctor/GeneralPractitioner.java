@@ -2,22 +2,31 @@ package mappe.del1.hospital.healthpersonal.doctor;
 
 import mappe.del1.hospital.Patient;
 
+/**
+ * Represents a general practitioner. 
+ * A general practitioner can set a diagnosis on a patient.
+ * 
+ * @author idatx2001
+ * @version 2021-03-23
+ */
 public class GeneralPractitioner extends Doctor {
 
     /**
-     * @param firstname
-     * @param lastname
-     * @param socialSecurityNumber
+     * Creates an instance of {@code GeneralPractitioner}.
+     * 
+     * @param firstName first name of the general practitioner
+     * @param lastName last name of the general practitioner
+     * @param socialSecurityNumber social security number (11 digits) of the general practitioner
      */
-    public GeneralPractitioner(final String firstname, final String lastname, final String socialSecurityNumber) {
+    public GeneralPractitioner(String firstname, String lastname, String socialSecurityNumber) {
         super(firstname, lastname, socialSecurityNumber);
     }
 
-    /**
-     * @param patient
-     * @param diagnosis
-     */
-    public void setDiagnosis(final Patient patient, final String diagnosis) {
+    @Override
+    public void setDiagnosis(Patient patient, String diagnosis) {
+        if ((patient == null) || (diagnosis == null)) {
+            throw new IllegalArgumentException("patient or diagnosis cannot be null.");
+        }        
         patient.setDiagnosis(diagnosis);
     }
 }
