@@ -21,11 +21,9 @@ public abstract class Person {
      * @param socialSecurityNumber the social security number fo the person
      */
     public Person(String firstName, String lastName, String socialSecurityNumber) {
-        if ((null == firstName) 
-                || (null == lastName) 
-                || null == socialSecurityNumber) {
-            throw new IllegalArgumentException("Parameters cannot be null");
-        }
+        this.checkForNullAndBlank(firstName);
+        this.checkForNullAndBlank(lastName);
+        this.checkForNullAndBlank(socialSecurityNumber);
         
         this.firstName = firstName;
         this.lastName = lastName;
@@ -106,12 +104,12 @@ public abstract class Person {
      * @param someText the text to check
      */
     private void checkForNullAndBlank(String someText) {
-         if (socialSecurityNumber == null) {
-            throw new IllegalArgumentException("Socisal security number cannot be null");
+         if (someText == null) {
+            throw new IllegalArgumentException("Parameter cannot be null");
         }
         
-        if (socialSecurityNumber.isBlank()) {
-            throw new IllegalArgumentException("Socisal security number cannot be null");            
+        if (someText.isBlank()) {
+            throw new IllegalArgumentException("Parameter cannot be blank");            
         }       
     }
 

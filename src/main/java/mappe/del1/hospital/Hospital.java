@@ -3,7 +3,7 @@ package mappe.del1.hospital;
 import java.util.ArrayList;
 
 import java.util.List;
-import mappe.del1.hospital.exception.RemoveException;
+
 
 /**
  * Represents a Hospital. 
@@ -15,7 +15,7 @@ import mappe.del1.hospital.exception.RemoveException;
 public class Hospital {
 
      //Departments.
-    private ArrayList<Department> departments = new ArrayList<Department>();
+    private ArrayList<Department> departments = new ArrayList<>();
     // Name of the Hospital
     private final String hospitalName;
 

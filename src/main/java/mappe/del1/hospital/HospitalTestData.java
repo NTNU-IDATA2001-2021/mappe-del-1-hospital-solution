@@ -12,6 +12,15 @@ import mappe.del1.hospital.healthpersonal.doctor.Surgeon;
  * @version 2021-03-23
  */
 public class HospitalTestData {
+    
+    /**
+     * It is good coding practice to always add a private default construcor
+     * on "utility classes". Utillity classes are classes where all methods
+     * are static. Hence we should never create instances of utillity classes.
+     */
+    private HospitalTestData() {
+        throw new IllegalStateException("Utility class");
+    }
 
     /**
      * Fills the hospital provided as a parameter with
