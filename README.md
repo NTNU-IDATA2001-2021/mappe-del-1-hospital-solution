@@ -11,3 +11,5 @@ I forhold til versjonskontroll, så har det ikke vært gjennomført committs for
 Har du spørsmål til, eller kommentarer til løsningsforslaget, så ta kontakt med Arne Styve (NTNU Ålesund) på
 e-post [asty@ntnu.no](asty@ntnu.no).
 
+Prosjektet er også koblet til SonarCloud for kvalitetssjekk, derfor inneholder pom.xml-filen noen få linjer ekstra som ikke er forventet at studentene har med ;-)
+
