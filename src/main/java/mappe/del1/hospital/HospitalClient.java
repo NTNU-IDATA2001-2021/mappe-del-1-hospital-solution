@@ -38,7 +38,8 @@ public class HospitalClient {
   }
 
   /**
-   * The main method of the appliction.
+   * The main method of the application.
+   *
    * @param args commandline arguments.
    */
   public static void main(final String[] args) {
